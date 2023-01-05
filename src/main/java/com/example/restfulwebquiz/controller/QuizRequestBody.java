@@ -5,11 +5,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Arrays;
 
-/**
- * DTO object representing a quiz creation request body.
- * Different from Quiz objects, at this stage (before creation) no id has been assigned
- * and also different from GET requests the solution to the quiz has to be provided by client.
- */
+
 public class QuizRequestBody {
 
     @NotEmpty

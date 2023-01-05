@@ -59,7 +59,6 @@ public class QuizService {
      *
      */
     public QuizResponse createQuiz(QuizRequestBody quizRequestBody) {
-        System.out.println("***" + quizRequestBody);
         Quiz quiz = quizRepository.save(new Quiz(quizRequestBody.getTitle(), quizRequestBody.getText()));
         quiz.setOptions(createAndSaveOptionsList(quizRequestBody, quiz));
         return new QuizResponse(quiz);

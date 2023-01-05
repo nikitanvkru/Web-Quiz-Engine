@@ -5,12 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.*;
 
-/**
- * DTO object representing a quiz.
- * The solution is not displayed to clients who attempt to solve this quiz,
- * therefore it is marked @JsonIgnore.
- * Instances of quizzes are only created by the QuizGenerator.
- */
+
 @Entity
 public class Quiz {
 

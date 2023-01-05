@@ -5,10 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
-/** DTO object representing a single answer option of a quiz.
- * The solution is not displayed to clients who attempt to solve this quiz,* therefore it is marked @JsonIgnore.
- * Instances of quizzes are only created by the QuizGenerator.
- */
+
 @Entity
 public class QuizOption {
 

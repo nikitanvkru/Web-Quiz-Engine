@@ -2,9 +2,7 @@ package com.example.restfulwebquiz.controller;
 
 import com.example.restfulwebquiz.persistence.Quiz;
 import com.example.restfulwebquiz.persistence.QuizOption;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 public class QuizResponse {
 
