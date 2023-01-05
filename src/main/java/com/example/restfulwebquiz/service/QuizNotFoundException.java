@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class QuizNotFoundException extends RuntimeException {
 
     public QuizNotFoundException() {
-        super("Invalid Quiz id given!");
+        super("Quiz with this id doesn't exist");
     }
 }

@@ -15,8 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 /**
- * Web service class, that bundles all the endpoint functionality (as of now) for the
- * WebQuizController REST-controller.
+ * QuizService class, holds the main logic of the WebQuizController class
  */
 @Service
 public class QuizService {
@@ -32,8 +31,8 @@ public class QuizService {
 
     /**
      * service corresponding to GET endpoints "api/quiz" and "api/quizzes/{id}"
-     * @param id the queried quiz id
-     * @return the quiz as retrieved from the QuizGenerator component or a 404 NOT FOUND
+     * @param id is the quiz id we want to get
+     * @return quiz obj if quiz with passed id is present, else return 404 status code
      */
     public ResponseEntity<QuizResponse> getQuizById(int id) {
         Quiz quiz = findQuizByIdOrThrow(id);
@@ -42,7 +41,7 @@ public class QuizService {
 
     /**
      * service corresponding to GET endpoints "api/quizzes"
-     * @return all quizzes from the QuizGenerator component
+     * @return all existing quizzes
      */
     public Iterable<QuizResponse> getQuizzes() {
         Iterable<Quiz> quizIterator= quizRepository.findAll();
@@ -53,9 +52,8 @@ public class QuizService {
 
     /**
      * service corresponding to POST endpoints "api/quizzes".
-     * calls the QuizGenerator with the QuizRequestBody to create this quiz
-     * @param quizRequestBody the QuizRequestBody DTO as received by POST
-     * @return the created quiz information - also displaying the id-key to client
+     * @param quizRequestBody the QuizRequestBody pojo posted by user
+     * @return some fields from posted quiz
      *
      */
     public QuizResponse createQuiz(QuizRequestBody quizRequestBody) {
@@ -81,9 +79,9 @@ public class QuizService {
 
     /**
      * service corresponding to POST endpoints "api/quizzes/{id}/solve"
-     * @param id the queried quiz id
-     * @param answer the answer option, that the user chose
-     * @return a feedback message on correctness of answer option or a 404 NOT FOUND
+     * @param id the quiz we want to solve by id
+     * @param answer the user answer
+     * @return wrong or right message if quiz exists and 404 if not
      */
     public ResponseEntity<QuizSolutionResponse> returnSolveResponse(int id, int[] answer) {
         Quiz quiz = findQuizByIdOrThrow(id);

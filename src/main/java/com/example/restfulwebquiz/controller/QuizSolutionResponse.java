@@ -3,11 +3,11 @@ package com.example.restfulwebquiz.controller;
 public class QuizSolutionResponse {
 
     public static QuizSolutionResponse correct() {
-        return new QuizSolutionResponse(true, "Cooooooorrect, oider!");
+        return new QuizSolutionResponse(true, "Congratulations, you're right!");
     }
 
     public static QuizSolutionResponse incorrect() {
-        return new QuizSolutionResponse(false, "Nöööööö !");
+        return new QuizSolutionResponse(false, "Wrong answer! Please, try again.");
     }
 
     public QuizSolutionResponse(boolean success, String feedback) {
