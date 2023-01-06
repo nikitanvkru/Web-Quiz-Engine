@@ -3,10 +3,7 @@
 Web service should be able to create new quiz from given json, also response back with some given information.
 Responsible http method post "api/quizzes"
 >
-<image
-  src="images/postman1.jpg"
-  alt="Post quiz"
-  caption="Post new quiz>
+<img src="images/postman2.jpg" width="800" />
 Server ansewers with the following json
 <image
   src="images/postman2.jpg"
