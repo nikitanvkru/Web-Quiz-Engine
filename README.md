@@ -2,13 +2,10 @@
 ##  Application description
 Web service should be able to create new quiz from given json, also response back with some given information.
 Responsible http method post "api/quizzes"
----
----
 <image
   src="images/postman1.jpg"
   alt="Post quiz"
   caption="Post new quiz>
-Returned json
 <image
   src="images/postman2.jpg"
   alt="Posted quiz"
