@@ -2,17 +2,17 @@
 ##  Application description
 Web service should be able to create new quiz from given json, also response back with some given information.
 Responsible http method post "api/quizzes"
+---
+---
 <image
   src="images/postman1.jpg"
   alt="Post quiz"
   caption="Post new quiz>
-  ---
 Returned json
 <image
   src="images/postman2.jpg"
   alt="Posted quiz"
   caption="Posted quiz">
-  ---
 Web service schould return all existing quizzes
 Responsible http method get "api/quizzes"
 <image
@@ -32,4 +32,8 @@ Responsible http method post "api/quizzes/{id}/solve"
   alt="Answer"
   caption="Answer with description">
 Also after server restarts all quizzes should remain accessible, for that reason we store all data in postgres db.
+<image
+  src="images/postgres.jpg"
+  alt="Screen db"
+  caption="Stored data">
 
