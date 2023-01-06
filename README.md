@@ -7,6 +7,7 @@ Responsible http method post "api/quizzes"
   src="images/postman1.jpg"
   alt="Post quiz"
   caption="Post new quiz>
+Server ansewers with the following json
 <image
   src="images/postman2.jpg"
   alt="Posted quiz"
