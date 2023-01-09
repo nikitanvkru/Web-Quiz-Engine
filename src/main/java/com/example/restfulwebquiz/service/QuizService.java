@@ -40,6 +40,16 @@ public class QuizService {
     }
 
     /**
+     * service corresponding to Delete endpoints "api/quiz" and "api/quizzes"
+     * @param id is the quiz id we want to delete
+     * @return deleted quiz obj if quiz with passed id is present, else return 404 status code
+     */
+    public ResponseEntity<QuizResponse> deleteQuizById(long id) {
+        Quiz quiz = deleteQuizByIdOrThrow(id);
+        return ResponseEntity.ok(new QuizResponse(quiz));
+    }
+
+    /**
      * service corresponding to GET endpoints "api/quizzes"
      * @return all existing quizzes
      */
@@ -91,12 +101,31 @@ public class QuizService {
         }
         return ResponseEntity.ok(QuizSolutionResponse.incorrect());
     }
-
+    /**
+     * method to find quiz with specified id
+     * @param id the quiz we want to find by id
+     * @return Quiz obj
+     */
     private Quiz findQuizByIdOrThrow(long id) {
         Optional<Quiz> quiz = quizRepository.findById(id);
         if (quiz.isEmpty()) {
             throw new QuizNotFoundException();
         }
         return quiz.get();
+    }
+
+    /**
+     * method to find quiz with specified id
+     * @param id the quiz we want to find by id
+     * @return Quiz obj
+     */
+    private Quiz deleteQuizByIdOrThrow(long id) {
+        Optional<Quiz> quiz = quizRepository.findById(id);
+        if (quiz.isEmpty()) {
+            throw new QuizNotFoundException();
+        }else {
+            quizRepository.deleteById(id);
+            return quiz.get();
+        }
     }
 }

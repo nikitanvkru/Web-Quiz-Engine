@@ -69,4 +69,18 @@ public class WebQuizController {
                                                            @RequestBody Map.Entry<String, int[]> answerEntry) {
         return quizService.returnSolveResponse(id, answerEntry.getValue());
     }
+
+    /**
+     * API name: Delete quiz with id
+     * HTTP method: Delete
+     *
+     * @return deleted quiz body if quiz with specified id exists, 404 if not
+     * @path api/quizzes
+     * @param id quiz id to delete
+     */
+    @DeleteMapping("api/quizzes")
+    public ResponseEntity<QuizResponse> removeAddress(@RequestParam Long id) {
+        return quizService.deleteQuizById(id);
+    }
+
 }
